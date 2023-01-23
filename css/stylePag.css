@@ -1,0 +1,137 @@
+/*  --Formatação-- */
+
+:root{
+	--first-color: #503721;
+	--first-color-light: #fff;
+	--body-font: 'Poppins', sans-serif;
+	--lightBrown: #a27c4b;
+	--color-subM: rgba(162, 124, 75, .5);
+}
+
+.alinhar {
+	padding-top: 13px!important
+}
+
+
+.descNum {
+	color: var(--first-color);
+	font-weight: bold;
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	/*margin-left: -15px;*/
+}
+
+.descNum .itens {
+	width: 65%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*  --Formatação da barra e do ícone de pesquisa--  */
+
+.barPesqisa {
+	position: relative;
+	padding-top: 20px;
+}
+
+button.search{
+	position: absolute;
+	left: 15px;
+	border: none;
+	font-size: 18px;
+	background-color: transparent;
+}
+
+input.textoCaixa {
+	height: 30px;
+	padding-right: 10px;
+	padding-left: 30px;
+	background-color: #d8d8d8;
+}
+
+input.textoCaixa:focus {
+	box-shadow: none;
+	border: none;
+	background-color: #d8d8d8;
+}
+
+/*  
+--Este mediaQuery faz desaparecer a barra lateral de 
+  navegação, quando o tamanho da tela é inferior a 576px e 
+  também orienta descrição com o número-- 
+*/
+@media screen and (max-width: 576px){
+	#nav-bar, .l-navbar {
+		display: none;
+	}
+	.descNum {
+		flex-direction: row;
+		justify-content: space-between;
+		justify-items: flex-start;
+		align-items: flex-start;
+		margin-left: -5px;
+		transition: .2s all;
+	}
+}
+ /*  --Define o tamanho de letra da descrição e o número--  */
+h1#descricao, .quant {
+	font-size: 1.3em;
+}
+
+/*  --Formatação dos icones de editar e remover--  */
+.icons {
+	background: red;
+	/*display: flex;
+	justify-content: flex-end;*/
+}
+
+.icons .iEdit {
+	margin-right: 25px;
+}
+
+.iEdit, .iRemov {
+	cursor: pointer;
+	font-size: 19px;
+	color: var(--first-color);
+}
+
+/*  --Formatação do botão adicionar-- */
+button#btnAdd {
+	background: var(--lightBrown);
+	color: var(--first-color-light);
+	margin-left: -5px;
+}
+
+
+/*  --Formatação da página funcionários--  */
+.imgFuncion img {
+	width: 35px;
+	height: 35px;
+	border-radius: 35px;
+}
+
+.textFuncion {
+	/*margin-top: 5px;*/
+	margin-left: 15px;
+}
+
+
+/* Formatação da área do cliente */
+#Empresa, #Particular {
+	margin-right: 5px;
+	border-color: var(--lightBrown);
+	background-color: transparent;
+}
+
+#Empresa:focus, #Particular:focus {
+	box-shadow: none;
+	background-color: var(--first-color);
+}
+
+#Empresa:checked, #Particular:checked {
+	background-color: var(--first-color);
+}

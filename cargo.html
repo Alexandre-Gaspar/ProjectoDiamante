@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/stylePag.css">
+	<!--Link do bootstrap-->
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<!--Link dos icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+	<title>Cargos</title>
+</head>
+<body id="body-pd">
+  
+  <!-- **Conteudo principal da aplicação** -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2 descNum">
+        <h1 id="descricao">Cargos</h1>
+        <span class="quant">2</span>
+      </div>
+      <div class="col-sm-1"></div>
+      <!-- **Barra de pesqiusa dos cargos** --> 
+      <div class="col-12 col-sm-7 barPesqisa">
+        <button class="search mdi mdi-magnify"></button>
+        <input class="form-control textoCaixa"></input>
+      </div>
+    </div>
+
+    <!--  **Botão adicionar cargos**  -->
+    <div class="row mt-4">
+      <div class="col-12 col-sm-6">
+        <button id="btnAdd" type="button" class="btn btn-sm mdi mdi-plus mdi-18px" data-bs-toggle="modal" data-bs-target="#cargoModal" data-bs-whatever="@fat">&nbsp;&nbsp;Adicionar cargo</button>
+      </div>
+    </div>
+
+    <!--  **Tabela dos cargos e suas descrições**  -->
+    <div class="row mt-4">
+      <div class="table-responsive">
+        <table class="table table-responsive">
+          <tr>
+            <td class="textCargo">Administrador</td>
+            <td class="textQuant">2</td>
+            <td class="icons text-end"><i class="mdi mdi-pencil iEdit"></i><i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminarItemModal"></i>
+            </td>
+          </tr>
+          <tr>
+            <td class="textCargo">Formador</td>
+            <td class="textQuant">5</td>
+            <td class="icons text-end"><i class="mdi mdi-pencil iEdit"></i><i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminarItemModal"></i>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal para adicionar cargos-->
+  <div class="modal fade" id="cargoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="textoCabecalho">Cargo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+          <div class="modal-body w-75 m-0 m-auto">
+            <div class="mb-5">
+              <label for="nomeModal" class="col-form-label mb-1 nomeModal">Nome</label>
+              <input type="text" class="form-control" id="nomeModal">
+            </div>
+            <h6 class="mt-4 mb-4 nomeModal">Permissões</h6>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn concluir btnModal-submit text-white">Concluir</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- **Modal para eliminar cargos -->
+  <div class="modal fade" id="eliminarItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class=" w-75 m-0 m-auto">
+            <span class="mdi mdi-delete mdi-48px iconesmodal"></span>
+            <h6 class="mt-4 mb-4 nomeModal">Eliminar item</h6>
+            <div class="">
+              <button type="submit" class="m-0 m-auto btn btnModal-submit text-white">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- **Scripts -->
+  <script src="js/script.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap/js/jquery.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

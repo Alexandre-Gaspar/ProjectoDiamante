@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/stylePag.css">
+  <link rel="stylesheet" type="text/css" href="css/styleForm.css">
+	<!--Link do bootstrap-->
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	
+  <!--Link dos icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+	<title>Serviços</title>
+</head>
+<body id="body-pd">
+  
+  <!-- **Conteudo principal da aplicação** -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 descNum">
+        <h1 id="descricao">Serviços</h1>
+        <span class="quant">2</span>
+      </div>
+      <div class="col-sm-1"></div>
+      <!-- **Barra de pesqiusa dos cargos** --> 
+      <div class="col-12 col-sm-7 barPesqisa">
+        <button class="search mdi mdi-magnify"></button>
+        <input class="form-control textoCaixa"></input>
+      </div>
+    </div>
+
+    <!--  **Botão adicionar serviços**  -->
+    <div class="row mt-4">
+      <div class="col-12 col-sm-6">
+        <button id="btnAdd" type="button" class="btn btn-sm mdi mdi-plus mdi-18px" data-bs-toggle="modal" data-bs-target="#servModal"  data-bs-whatever="@fat">&nbsp;&nbsp;Adicionar serviços</button>
+      </div>
+    </div>
+
+    <!--  **Tabela dos cargos e suas descrições**  -->
+    <div class="row mt-4">
+      <table class="table table-responsive">
+        <tr>
+          <td class="imgFuncion">
+            <span>Consultoria Empresarial</span>
+            <span class="textFuncion">para a Empresa JK</span>
+          </td>
+          <td>05/12/2022</td>
+          <td class="icons text-end">
+            <i class="mdi mdi-pencil iEdit"></i>
+            <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminarItemModal"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="imgFuncion">
+            <span>Formação de Inglês</span>
+            <span class="textFuncion">para a Empresa JK</span>
+          </td>
+          <td>05/12/2022</td>
+          <td class="icons text-end">
+            <i class="mdi mdi-pencil iEdit"></i>
+            <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target=""></i>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!--  **Modal para cadastrar seviço  -->
+  <div class="modal fade" id="servModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Serviços</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="container">
+              <div class="col-12 mb-4">
+                <label for="tipoCliente" class="mb-2">Cliente</label>
+                <select id="tipoCliente" class="form-select">
+                  <option value="">selecione o cliente</option>
+                  <option value="2">Empresa</option>
+                  <option value="3">Particular</option>
+                  <option value="4">selecione o cliente</option>
+                </select>
+              </div>
+              <div class="col-12 mb-4">
+                <label for="tipoServ" class="mb-2">Tipo de serviço</label>
+                <select id="tipoServ" class="form-select">
+                  <option value="">selecione o serviço</option>
+                  <option value="1">Palestra</option>
+                  <option value="2">Workshop</option>
+                  <option value="3">Curso</option>
+                </select>
+              </div>
+
+              <!-- Formulario do curso -->
+              <div id="curso" class="mb-4">
+                <div class="row col-sm-12">
+                  <div class="col-12 col-sm-6 mb-4">
+                    <label for="tipoCliente" class="mb-2">Cliente</label>
+                    <select id="tipoCliente" class="form-select">
+                      <option value="1">selecione o curso</option>
+                      <option value="2">Prog Web</option>
+                      <option value="3">Frio Climatiz</option>
+                      <option value="4">Mecânica</option>
+                    </select>
+                  </div>
+                  <!-- Escolher turma-->
+                  <div class="col-12 col-sm-6 mb-4">
+                    <label for="tipoServ" class="mb-2">selecione a turma</label>
+                    <select id="tipoServ" class="form-select">
+                      <option value="">selecione a turma</option>
+                      <option value="2">Turma1</option>
+                      <option value="3">Turma2</option>
+                      <option value="4">Turma3</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Escolher o nº de participantes-->
+                <div class="mb-4">
+                  <label for="num" class="mb-2">Número de participantes</label>
+                  <input type="number" id="num" name="" class="form-control w-25" placeholder="0">
+                </div>
+                <!-- Escolher professor-->
+                <div class="col-12 col-sm-12 mb-4">
+                  
+                  <div class="dropdown">
+                    <label for="escForma" class="mb-2">Formador</label><br> 
+                <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="escForma">Selecione o formador
+                </button>
+                <form>
+                <ul class="dropdown-menu formador">
+                  <li class="dropdown-item">
+                    <label for="check">
+                      <img src="img/mulher.jpg">
+                      <div class="descForm">
+                        <span class="nomeFormad">Cassandra Alexandre</span><br>
+                        <span class="cursoFormad">Construcão Civil</span><br>
+                        <i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i>&nbsp;&nbsp;
+                        <span class="numero">10</span><span class="numero">/</span><span class="numero">10</span>
+                      </div>
+                    </label>
+                    <input type="checkbox" name="check" class="form-check-input">
+                  </li>
+                  <li class="dropdown-item">
+                    <label for="check1">
+                      <img src="img/homem.jpg">
+                      <div class="descForm">
+                        <span class="nomeFormad">Alexandre Ribeiro</span><br>
+                        <span class="cursoFormad">Electricista</span><br>
+                        <i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i>&nbsp;&nbsp;
+                        <span class="numero">10</span><span class="numero">/</span><span class="numero">10</span>
+                      </div>
+                    </label>
+                    <input type="checkbox" name="check" class="form-check-input">
+                  </li>
+                  <li class="dropdown-item">
+                    <label for="chooseForma">
+                      <img src="img/homem.jpg">
+                      <div class="descForm">
+                        <span class="nomeFormad">Alexandre Ribeiro</span><br>
+                        <span class="cursoFormad">Electricista</span><br>
+                        <i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i>&nbsp;&nbsp;
+                        <span class="numero">10</span><span class="numero">/</span><span class="numero">10</span>
+                      </div>
+                    </label>
+                    <input type="checkbox" name="check" class="form-check-input">
+                  </li>
+                </ul>
+                <div class="mt-4" id="atrFormador">
+                  <div class="formulario">
+                    <img src="img/mulher.jpg">
+                    <div class="descForm">
+                      <span class="nomeFormad">Cassandra Alexandre</span><br>
+                      <span class="cursoFormad">Construcão Civil</span><br>
+                      <i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i><i class="mdi mdi-star-outline"></i>&nbsp;&nbsp;
+                      <span class="numero">10</span><span class="numero">/</span><span class="numero">10</span>
+                    </div>
+                    <input type="checkbox" name="check" class="form-check-input">
+                  </div>
+                </div>
+                </form>
+              </div>
+              </div>
+              </div>
+
+              <div class="row col-sm-12 mb-4">
+                <div class="col-sm-6">
+                  <label for="dataInic" class="mb-2">Data de início</label>
+                  <input type="date" id="dataInic" class="form-control" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="dataTerm" class="mb-2">Data de término</label>
+                  <input type="date" id="dataTerm" class="form-control" required>
+                </div>
+              </div>
+              <div class="col-12 mb-4">
+                <div>
+                  <label for="local" class="mb-2">Local</label>
+                  <input type="text" id="local" class="form-control" required>
+                </div>
+              </div>
+              <div class="row col-sm-12 mb-4">
+                <div class="col-sm-6">
+                  <label for="vtServico" class="mb-2">Valor de serviço</label>
+                  <input type="number" id="vtServico" class="form-control" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="formPagam" class="mb-2">Forma de pagamento</label>
+                  <select id="formPagam" class="form-select" required>
+                    <option value="1"required>selecione a forma</option>
+                    <option value="2">Palestra</option>
+                    <option value="3">Workshop</option>
+                    <option value="4">Formação</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 mb-4">
+                <div>
+                  <label for="prestacao" class="mb-2">Pretação</label>
+                  <input type="text" id="prestacao" class="form-control" required>
+                </div>
+              </div>
+              <div class="row col-sm-12 mb-4">
+                <div class="col-sm-6">
+                  <label for="banco" class="mb-2">Banco</label>
+                  <input type="text" id="banco" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                  <label for="nConta" class="mb-2">Número de conta</label>
+                  <input type="number" id="nConta" class="form-control" required>
+                </div>
+              </div>
+              <div class="row col-sm-12 mb-4">
+                <div class="col-sm-6">
+                  <label for="tipoConta" class="mb-2">Tipo de conta</label>
+                  <select id="tipoConta" class="form-select" required>
+                    <option value="1"required>selecione a forma</option>
+                    <option value="2">Palestra</option>
+                    <option value="3">Workshop</option>
+                    <option value="4">Formação</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="valorPago" class="mb-2">Valor pago</label>
+                  <input type="number" id="valorPago" class="form-control" required>
+                </div>
+              </div>
+              <div class="row col-sm-12 mb-4">
+                <div class="col-sm-6">
+                  <label for="envContrato" class="mdi mdi-cloud-upload mdi-18px mb-2">&nbsp;&nbsp;Enviar contrato</label>
+                  <input type="file" id="envContrato" class="form-control d-none" required>
+                  <label class="mb-2">Contrato</label>
+                  <div id="contrato" >
+                    <span style="font-size:12px;" class="ativo">Activo</span>
+                    <span class="ver mt-1 m-2">ver</span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="envContrato" class="mdi mdi-cloud-upload mdi-18px mb-2">&nbsp;&nbsp;Enviar comprovativo</label>
+                  <input type="file" id="envContrato" class="form-control d-none" required>
+                  <label class="mb-2">Comprovativo</label>
+                  <div id="contrato" >
+                    <span style="font-size:12px;" class="ativo">Activo</span>
+                    <span class="ver mt-1 m-2">ver</span>
+                  </div>
+                </div>
+            </div>
+              <div class="row col-sm-12 mb-4 mt-4">
+                <label for="obs">OBS</label>
+                <textarea rows="4" id="obs" class="form-control"></textarea>  
+              </div>
+           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- **Modal para eliminar cargos -->
+  <div class="modal fade" id="eliminarItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class=" w-75 m-0 m-auto">
+            <span class="mdi mdi-delete mdi-48px iconesmodal"></span>
+            <h6 class="mt-4 mb-4 nomeModal">Eliminar item</h6>
+            <div class="">
+              <button type="submit" class="m-0 m-auto btn btnModal-submit text-white">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- **Scripts -->
+  <script src="js/script.js"></script>
+  <script src="js/formServico.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap/js/jquery.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

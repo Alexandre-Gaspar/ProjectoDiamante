@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/stylePag.css">
+	<!--Link do bootstrap-->
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	
+  <!--Link dos icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+	<title>Funcionários</title>
+</head>
+<body id="body-pd">
+  
+  <!-- **Conteudo principal da aplicação** -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 descNum">
+        <h1 id="descricao">Funcionários</h1>
+        <span class="quant">2</span>
+      </div>
+      <div class="col-sm-1"></div>
+      <!-- **Barra de pesqiusa dos cargos** --> 
+      <div class="col-12 col-sm-7 barPesqisa">
+        <button class="search mdi mdi-magnify"></button>
+        <input class="form-control textoCaixa">
+        <span>Search by</span>
+
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
+      </div>
+    </div>
+
+    <!--  **Botão adicionar cagos**  -->
+    <div class="row mt-4">
+      <div class="col-12 col-sm-6">
+        <button id="btnAdd" type="button" class="btn btn-sm mdi mdi-plus mdi-18px" data-bs-toggle="modal" data-bs-target="#funcioModal"  data-bs-whatever="@fat">&nbsp;&nbsp;Adicionar funcionário</button>
+      </div>
+    </div>
+
+    <!--  **Tabela dos cargos e suas descrições**  -->
+    <div class="row mt-4">
+      <table class="table table-responsive">
+        <tr>
+          <td class="imgFuncion">
+            <img id="img" src="img/homem.jpg">
+            <span class="textFuncion">Administrador</span>
+          </td>
+          <td class="icons text-end">
+            <i class="mdi mdi-pencil iEdit"></i>
+            <i class="mdi mdi-delete iRemov"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="imgFuncion">
+            <img id="img" src="img/mulher.jpg">
+            <span class="textFuncion">Administrador</span>
+          </td>
+          <td class="icons text-end" style="margin-top: 5px;">
+            <i class="mdi mdi-pencil iEdit"></i>
+            <i class="mdi mdi-delete iRemov"></i>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+  <!-- Modal adicionar funcionários -->
+  <div class="modal modal-lg fade" id="funcioModal" tabindex="-1"aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="textoCabecalho">Funcionários</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+          <div class="modal-body w-100 m-0 m-auto">
+            <header>
+              <div class="uploadImg m-auto m-md-0">
+                <i class="mdi mdi-user"></i>
+                <span class="mdi mdi-account"></span>
+                <input type="file" id="file" name="">
+                <label for="file" class="mdi mdi-camera-plus mdi-24px  adifoto">&nbsp;&nbsp;&nbsp;&nbsp;Adicionar foto</label>
+              </div>
+            </header>
+            <section>
+              <div class="dados mb-2">
+                <!--============INFORMAÇÕES PESSOAIS============-->
+                <h6 class="fw-bold">INFORMAÇÕES PESSOAIS</h6>
+                <div class="row">
+                  <div class="col-md-6 col-12 mb">
+                    <label for="Nome">Nome completo</label>
+                    <input type="text" name="nome" id="Nome" class="form-control ">
+                  </div>
+
+                  <div class="col-md-3 col-6  mb">
+                    <label for="sexo">Sexo</label>
+                      <select class="form-select" id="sexo" >
+                        <option selected >Selecione o sexo</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                      </select>
+                  </div>
+
+                  <div class="col-md-3 col-6  order-1 order-md-0  mb">
+                    <label for="data">Data de nascimento</label>
+                    <input type="date" id="data" class="form-control">
+                  </div>
+
+                  <div class="col-md-4 col-6  mb">
+                    <label for="civil">Estado civil</label>
+                    <select class="form-select" id="sexo" >
+                      <option selected >Selecione o estado civil</option>
+                      <option value="1">Solteiro</option>
+                      <option value="2">Casado</option>
+                      <option value="2">Viúvo</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+            <!--==============BILHETE DE IDENTIDADE=================-->
+            <div class="dados mb-2">
+              <h6 class="fw-bold">BI</h6>
+              <div class="row">
+                <div class="col-md-3 col-6 mb">
+                  <label for="numeroBI">Número</label>
+                  <input type="text" id="numeroBI" class="form-control">
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label for="Emitido">Emitido em</label>
+                  <input type="date" id="Emitido" class="form-control">
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label for="validade">Valido até</label>
+                  <input type="date" id="validade" class="form-control">
+                </div>
+
+                <div class="col-md-3 col-6 py-md-4">
+                  <label for="Enviar-BI" 
+                  class="btn mdi mdi-cloud-upload mdi-24px" 
+                  id="btn-BI">&nbsp;&nbsp;Enviar</label>
+                  <input type="file" id="Enviar-BI" style="display:none;">
+                </div>
+              </div>
+            </div>
+          <!--=====================CONTACTOS=====================-->
+            <div class="dados mb-2">
+              <h6 class="fw-bold">CONTACTOS</h6>
+              <div class="row">
+                <div class="col-md-3 col-6 mb">
+                  <label class="telefone">Telefone</label>
+                  <input type="tel" id="telefone" class="form-control"  >
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label class="telefone-alt">Telefone alternativo</label>
+                  <input type="tel" id="telefone-alt" class="form-control" min="0" max="9">
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label class="whatsapp">Whatsapp</label>
+                  <input type="tel" id="whatsapp" class="form-control" max="9" >
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" class="form-control">
+                </div>
+              </div>
+            </div>
+          <!--======================ENDEREÇO=====================-->
+            <div class="dados mb-2">
+              <h6 class="fw-bold">ENDEREÇO</h6>
+              <div class="row">
+                <div class="col-md-3 col-6 mb">
+                  <label for="pais">País</label>
+                  <select class="form-select" id="pais" >
+                    <option value="1">Angola</option>
+                    <option value="2">Congo</option>
+                    <option value="3">Moçambique</option>
+                    <option value="4">Zaíre</option>
+                  </select>
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label for="provincia" class="col-md-3 col-6">Província</label>
+                  <select class="form-select" id="provincia" >
+                    <option value="1">Luanda</option>
+                    <option value="2">Bengo</option>
+                    <option value="3">Benguela</option>
+                    <option value="4">Bié</option>
+                  </select>
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label for="bairro">Bairro</label>
+                  <input type="text" id="bairro" class="form-control" >
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label for="rua">Rua</label>
+                  <input type="text" id="rua" class="form-control" >
+                </div>
+
+                <div class="col-md-3 col-6 mb">
+                  <label for="ncasa">Nº casa</label>
+                  <input type="number" id="ncasa" class="form-control" >
+                </div>
+              </div>
+            </div>
+          <!--======================HABILITAÇÃO=====================-->
+          <div class="dados mb-2">
+            <h6 class="fw-bold">HABILITAÇÃO</h6>
+            <div class="row">
+              <div class="col-md-5 col-6 mb">
+                <label for="nivel">Nível académico</label>
+                 <select class="form-select" id="nivel" >
+                  <option selected >Selecione o nível académico</option>
+                  <option value="1">Ensino Médio</option>
+                  <option value="2">Licenciatura</option>
+                  <option value="3">Mestrado</option>
+                  <option value="4">Doutorado</option>
+                </select>
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="curso">Curso frequentado</label>
+                <input type="text" id="curso" class="form-control" >
+              </div>
+
+              <div class="col-md-3 col-6 py-md-4 mb">
+                <label for="btn-enviar" 
+                class="btn mdi mdi-cloud-upload mdi-24px" 
+                id="btn-enviar">&nbsp;&nbsp;Enviar certificado</label>
+                <input type="file" id="btn-enviar" style="display:none;">
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="curso">Curso frequentado</label>
+                <input type="text" id="curso" class="form-control" >
+              </div>
+
+              <div class="col-md-3 col-6 py-md-4 mb">
+                <label for="btn-enviar" 
+                class="btn mdi mdi-cloud-upload mdi-24px" 
+                id="btn-enviar">&nbsp;&nbsp;Enviar certificado</label>
+                <input type="file" id="btn-enviar" style="display:none;">
+              </div>
+
+              <div class="col-md-3 col-6 py-md-4 px-md-5 mb">
+                <button class="btn mdi mdi-plus mdi-24px" 
+                id="btn-adicionar">&nbsp;&nbsp;Adicionar curso</button>
+              </div>
+            </div>
+          </div>
+          <!--======================INFORMAÇÕES CORPORATIVAS=====================-->
+          <div class="dados mb-3">
+            <h6 class="fw-bold">INFORMAÇÕES CORPORATIVAS</h6>
+            <div class="row">
+              <div class="col-md-5 col-5 d-md-flex mb-4"> 
+                <div class="form-check py-md-4">
+                  <input type="checkbox" name="radio" class="form-check-input nomeModal" id="Funcionario">
+                  <label class="form-check-label" for="Funcionario">Funcionario</label>
+                </div>
+                <div class="form-check py-md-4 px-md-5">
+                  <input type="checkbox" name="radio" class="form-check-input nomeModal" id="Colaborador">
+                  <label class="form-check-label" for="Colaborador">Colaborador</label>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="cargos">Cargos atribuidos</label>
+                <select class="form-select" id="cargo" >
+                  <option selected >Selecione o cargo</option>
+                  <option value="1">Administrador</option>
+                  <option value="2">Colaborador</option>
+                  <option value="3">Formador</option>
+                </select>
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for=" atribuidos">Cargos atribuidos</label>
+                <button class="btn p-1" id="btn-atribuidos">Adiministrador&nbsp;&nbsp;
+                <i class="mdi mdi-close mdi-18px"></i></button>
+              </div>
+
+              <div class="col-md-4 col-6 px-md-3 py-4 py-md-4 mb order-1 order-md-0">
+                <span class="btn mdi mdi-plus mdi-24px" 
+                id="btn-adicionar">&nbsp;&nbsp;Adicionar contrato</span>
+              </div>
+
+              <div class="col-md-4 col-6 mb order-1 order-md-0">
+                <label for="d-inicio">Data de inicio do trabalho</label>
+                <input type="date" id="d-inicio" class="form-control">
+              </div>
+
+              <div class="col-md-4 col-6">
+                <label>Acesso</label>
+                <div>
+                  <input type="radio" name="radio" id="activo" class="form-check-input">
+                  <label for="activo">Activo</label>&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="radio" id="desativo" class="form-check-input">
+                  <label for="desativo">Desativo</label>
+                </div>
+              </div>
+
+              <article class="  adi-contrato order-1 order-md-0">
+                <div class="row order-1 d-block" id="for-block3">
+                  <div class="col-md-4 col-7 mb">
+                    <label for="contrato">Tipo de contrato</label>
+                    <select class="form-select" id="contrato" aria-label="Default select example">
+                      <option selected>Selecione o tipo contrato</option>
+                      <option value="1">Aberto</option>
+                      <option value="2">Fechado</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-3 col-6 mb">
+                    <label for="validade">Validade do contrato</label>
+                    <input type="date" id="validade" class="form-control">
+                  </div>
+
+                  <div class="col-md-3 col-6 py-md-4 mb">
+                    <label for="btn-enviar" 
+                    class="btn mdi mdi-cloud-upload mdi-24px" 
+                    id="btn-enviar">&nbsp;&nbsp;Enviar contrato</label>
+                    <input type="file" id="btn-enviar" style="display:none;">
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+           <!--======================INFORMAÇÕES PAGAMENTO=====================-->
+          <div class="dados mb-3">
+            <h6 class="fw-bold">INFORMAÇÕES DE PAGAMENTO</h6>
+            <div class="row">
+              <div class="col-md-3 col-6 mb">
+                <label for="salario">Salário</label>
+                <input type="number" id="salario" class="form-control">
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col-md-3 col-6 mb">
+                <label for="banco">Banco</label>
+                <input type="text" id="banco" class="form-control">
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="numeroconta">Número de conta</label>
+                <input type="number" id="numeroconta" class="form-control">
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="IBAN">Número de IBAN</label>
+                <input type="number" id="IBAN" class="form-control">
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+               <label>Tipo de conta</label>
+                <div class="d-block">
+                  <div>
+                    <input type="radio" name="radio" id="corrente" class="form-check-input">
+                    <label for="corrente">Corrente</label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="radio" id="poupanca" class="form-check-input">
+                    <label for="poupanca">Poupança</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--======================HEMERGêNCIA=====================-->
+          <div class="dados mb-3">
+            <h6 class="fw-bold">HEMERGÊNCIA</h6>
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <label for="pessoa">Pessoa de contacto</label>
+                <input type="text" id="pessoa"  class="form-control">
+              </div>
+
+              <div class="col-md-4 col-6">
+                <label for="parentesco">Grau de parentesco</label>
+                <input type="text" id="parentesco"  class="form-control">
+              </div>
+            </div>
+             <!--======================CONTACTOS=====================-->
+            <div class="row mt-4">
+              <h6 class="fw-bold">Contactos</h6>
+
+              <div class="col-md-3 col-6 mb-2">
+                <label for="tel">Telefone</label>
+                <input type="tel" name="tel" id="tel" class="form-control">
+              </div>
+
+              <div class="col-md-3 col-6 ">
+                <label for="tel2">Telefone alternativo</label>
+                <input type="tel" name="tel" id="tel2" class="form-control">
+              </div>
+
+              <div class="col-md-3 col-6  mb-2">
+                <label for="whats">Whatsapp</label>
+                <input type="tel" name="tel" id="whats" class="form-control">
+              </div>
+
+              <div class="col-md-3 col-6 ">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" class="form-control">
+              </div>
+            </div>
+            <!--======================ENDEREÇO=====================-->
+            <div class="row mt-4">
+              <h6 class="fw-bold">Endereço</h6>
+              <div class="col-md-3 col-6 mb">
+                <label for="pais">País</label>
+                <select class="form-select" id="pais" >
+                  <option value="1">Angola</option>
+                  <option value="2">Congo</option>
+                  <option value="3">Moçambique</option>
+                  <option value="4">Zaíre</option>
+                </select>
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="provincia" class="col-md-3 col-6">Província</label>
+                <select class="form-select" id="provincia" >
+                  <option value="1">Luanda</option>
+                  <option value="2">Bengo</option>
+                  <option value="3">Benguela</option>
+                  <option value="4">Bié</option>
+                </select>
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" class="form-control" >
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="rua">Rua</label>
+                <input type="text" id="rua" class="form-control" >
+              </div>
+
+              <div class="col-md-3 col-6 mb">
+                <label for="ncasa">Nº casa</label>
+                <input type="number" id="ncasa" class="form-control" >
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="modal-footer rodape">
+          <button type="submit" class="btn" id="btn-guardar">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <!-- **Scripts -->
+  <script src="js/script.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap/js/jquery.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

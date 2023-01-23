@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/stylePag.css">
+	<!--Link do bootstrap-->
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	
+  <!--Link dos icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+	<title>Clientes</title>
+</head>
+<body id="body-pd">
+  
+  <!-- **Conteudo principal da aplicação** -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 descNum">
+        <div class="">
+          <h1 id="descricao">Cliente</h1>
+          <span class="quant">2</span> 
+        </div>
+      </div>
+      <div class="col-sm-1"></div>
+      <!-- **Barra de pesqiusa dos cargos** --> 
+      <div class="col-12 col-sm-5 barPesqisa">
+        <button class="search mdi mdi-magnify"></button>
+        <input class="form-control textoCaixa"></input>
+      </div>
+    </div>
+
+    <!--  **Botão adicionar cagos**  -->
+    <div class="row mt-4">
+      <div class="col-12 col-sm-4">
+        <button id="btnAdd" type="button" class="btn btn-sm mdi mdi-plus mdi-18px" data-bs-toggle="modal" data-bs-target="#exampleModal"  data-bs-whatever="@fat">&nbsp;&nbsp;<span>Adicionar Clientes</span></button>
+      </div>
+      <div class="col-6 col-sm-3 text-start">
+        <input type="checkbox" class="form-check-input" name="Empresa" id="Empresa" ><span><label for="Empresa"> Empresa</label></span>
+      </div>
+      <div class="col-6 col-sm-3 text-start">
+        <input type="checkbox" name="Particular" class="form-check-input" id="Particular"><span><label for="Particular"> Particular</label></span>
+      </div>
+    </div>
+
+    <!--  **Tabela dos cargos e suas descrições**  -->
+    <div class="row mt-4">
+      <table class="table table-responsive">
+        <tr><td></td><td></td><td></td></tr>
+        <tr>
+          <td class="imgFuncion"><img id="img" src="img/homem.jpg"><span class="textFuncion">Administrador</span>
+          </td>
+          <td class="alinhar">Empresa</td>
+          <td class="icons text-end alinhar">
+            <i class="mdi mdi-pencil iEdit"></i>
+            <i class="mdi mdi-delete iRemov"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="imgFuncion">
+            <img id="img" src="img/mulher.jpg">
+            <span class="textFuncion">Administrador</span>
+          </td>
+          <td class="alinhar">Particular</td>
+          <td class="icons text-end alinhar" style="margin-top: 5px;">
+            <i class="mdi mdi-pencil iEdit"></i>
+            <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminar" data-bs-whatever="@fat"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="imgFuncion alinhar">
+            <img id="img" src="img/mulher.jpg">
+            <span class="textFuncion">Administrador</span>
+          </td>
+          <td class="alinhar">Particular</td>
+          <td class="icons text-end alinhar" style="margin-top: 5px;">
+            <i class="mdi mdi-pencil iEdit"></i>
+            <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminar" data-bs-whatever="@fat"></i>
+          </td>
+        </tr>
+      </table>
+  </div>
+
+  <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class=" w-75 m-0 m-auto">
+            <span class="mdi mdi-delete mdi-48px iconesmodal"></span>
+            <h6 class="mt-4 mb-4 nomeModal">Eliminar item</h6>
+            <div class="">
+              <button type="submit" class="m-0 m-auto btn btnModal-submit text-white">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- **Scripts -->
+  <script src="js/script.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap/js/jquery.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
