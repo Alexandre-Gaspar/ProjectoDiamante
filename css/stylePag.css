@@ -127,11 +127,3 @@ button#btnAdd {
 	background-color: transparent;
 }
 
-#Empresa:focus, #Particular:focus {
-	box-shadow: none;
-	background-color: var(--first-color);
-}
-
-#Empresa:checked, #Particular:checked {
-	background-color: var(--first-color);
-}

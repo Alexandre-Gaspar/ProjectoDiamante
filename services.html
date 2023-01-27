@@ -58,7 +58,7 @@
           <td>05/12/2022</td>
           <td class="icons text-end">
             <i class="mdi mdi-pencil iEdit"></i>
-            <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target=""></i>
+            <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#delete"></i>
           </td>
         </tr>
       </table>
@@ -282,7 +282,7 @@
   </div>
 
   <!-- **Modal para eliminar cargos -->
-  <div class="modal fade" id="eliminarItemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content text-center">
         <div class="modal-body">
@@ -298,6 +298,23 @@
       </div>
     </div>
   </div>
+
+  <div class="modal" tabindex="-1" id="eliminarItemModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class=" w-75 m-0 m-auto">
+          <span class="mdi mdi-delete mdi-48px iconesmodal"></span>
+          <h6 class="mt-4 mb-4 nomeModal">Eliminar item</h6>
+          <div class="">
+            <button type="submit" class="m-0 m-auto btn btnModal-submit text-white">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- **Scripts -->
   <script src="js/script.js"></script>

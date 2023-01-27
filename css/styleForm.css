@@ -118,7 +118,7 @@ li.dropdown-item input {
 	background-color: transparent;
 }
 li.dropdown-item input:checked {
-	background-color: #503721;
+	background-color: #503721!important;
 }
 .formador li label {
 	position: absolute;

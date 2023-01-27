@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/stylePag.css">
+  <link rel="stylesheet" type="text/css" href="css/add.css">
 	<!--Link do bootstrap-->
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	
@@ -33,10 +34,10 @@
     <!--  **Botão adicionar cagos**  -->
     <div class="row mt-4">
       <div class="col-12 col-sm-4">
-        <button id="btnAdd" type="button" class="btn btn-sm mdi mdi-plus mdi-18px" data-bs-toggle="modal" data-bs-target="#exampleModal"  data-bs-whatever="@fat">&nbsp;&nbsp;<span>Adicionar Clientes</span></button>
+        <button id="btnAdd" type="button" class="btn btn-sm mdi mdi-plus mdi-18px" data-bs-toggle="modal" data-bs-target="#modalAddCliente"  data-bs-whatever="@fat">&nbsp;&nbsp;<span>Adicionar clientes</span></button>
       </div>
       <div class="col-6 col-sm-3 text-start">
-        <input type="checkbox" class="form-check-input" name="Empresa" id="Empresa" ><span><label for="Empresa"> Empresa</label></span>
+        <input type="checkbox" class="form-check-input" name="Empresa" id="Empresa"><span><label for="Empresa"> Empresa</label></span>
       </div>
       <div class="col-6 col-sm-3 text-start">
         <input type="checkbox" name="Particular" class="form-check-input" id="Particular"><span><label for="Particular"> Particular</label></span>
@@ -53,7 +54,7 @@
           <td class="alinhar">Empresa</td>
           <td class="icons text-end alinhar">
             <i class="mdi mdi-pencil iEdit"></i>
-            <i class="mdi mdi-delete iRemov"></i>
+            <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminar" data-bs-whatever="@fat"></i>
           </td>
         </tr>
         <tr>
@@ -63,7 +64,7 @@
           </td>
           <td class="alinhar">Particular</td>
           <td class="icons text-end alinhar" style="margin-top: 5px;">
-            <i class="mdi mdi-pencil iEdit"></i>
+            <i class="mdi mdi-pencil iEdit" data-bs-toggle="modal" data-bs-target="#modalEditCliente" data-bs-whatever="@fat"></i>
             <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminar" data-bs-whatever="@fat"></i>
           </td>
         </tr>
@@ -81,6 +82,253 @@
       </table>
   </div>
 
+  <!--Modal para adicionar clientes-->
+  <div  class="modal modal-lg modal-md fade" id="modalAddCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Clientes</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="uploadImg ">
+            <i class="mdi mdi-user"></i>
+            <span class="mdi mdi-account"></span>
+            <input type="file" id="file" name="">
+            <label for="file" class="mdi mdi-camera-plus mdi-24px  adifoto">&nbsp;&nbsp;&nbsp;&nbsp;Adicionar foto</label>
+          </div>
+          <div class="uploadedit float-end">
+             <label for="" class="mdi mdi-pencil mdi-24px editar" ></label>
+          </div>
+
+          <!-- INFORMAÇÕES PESSOAIS -->
+          <div class="dados mb-4 mt-5">
+            <h6 class="mb-4 mt-2 fw-bold">PERFIL</h6>
+            <div class="container mb-4">
+              <div class="row">
+                <div class="col-12 col-sm-7 " style="margin-right:37px;" >
+                  <label for="nome" class="mb-2">Nome da Empresa</label>
+                  <input type="text" name="" id="nome" class="form-control">
+                </div>
+                <div class=" col-12 col-sm-4">
+                  <label for="NIF" class="mb-2">NIF</label>
+                  <input type="text" name="" id="nome" class="form-control">
+                </div>
+                <div class="row mt-4">
+                  <div class="col-12">
+                    <label for="Descrição" class="mb-2">Descrição da Empresa</label>
+                    <textarea class="w-100"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- CONTACTOS --> 
+          <div class="dados mb-4 mt-2">
+            <h6 class="mb-4 mt-2 fw-bold">CONTACTOS</h6>
+            <div class="row mb-3">
+              <div class=" col-6 col-sm-3">
+                <label for="tel" class="mb-2">Tel</label>
+                <input type="tel" name="" id="tel" class="form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="tel2" class="mb-2">Tel opcional</label>
+                <input type="tel" name="" id="tel2" class="form-control">
+              </div>
+              <div class="col-6 col-sm-3" >
+                <label for="whats" class="mb-2">Whatsapp</label>
+                <input type="tel" name="" id="whats" class="form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="email" class="mb-2">E-mail</label>
+                <input type="email" name="" id="email" class="form-control">
+              </div>
+            </div>  
+          </div>
+          <!-- ENDEREÇO --> 
+          <div class="dados mb-4 mt-2">
+            <h6 class="mb-4 mt-2 fw-bold">ENDEREÇO</h6>
+            <div class="row mb-3">
+              <div class="col-6 col-sm-3">
+                <label for="pais" class="mb-2">País</label>
+                <input type="text" name="" id="pais" class="form-control" placeholder="Angola">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="provin"  class="mb-2">Província</label>
+                <input type="text" name="" id="provin" class="form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="bairro"  class="mb-2">Bairro</label>
+                <input type="text" name="" id="bairro" class="form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="rua"  class="mb-2">Rua</label>
+                <input type="text" name="" id="rua" class="form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="nCasa"  class="mb-2">Nº da casa</label>
+                <input type="number" name="" id="nCasa" class="form-control">
+              </div>  
+            </div>
+          </div>
+          <!-- INFORMAÇÃO ADICIONAL --> 
+          <div class="dados mb-4 mt-2">
+            <h6 class="mb-4 mt-2 fw-bold">INFORMAÇÃO ADICIONAL</h6>
+            <div class="row">
+              <div class="col-12">
+                <label for="OBS" class="mb-2">OBS</label>
+                <textarea class="w-100" style="height: 155px;"></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- Serviços solicitados --> 
+          <div class="dados mb-4 mt-2  SOLICITADOS" style="height: 260px;">
+            <h6 class="mb-4 mt-2 fw-bold">SERVIÇOS SOLICITADOS</h6>
+            <div class="row">
+              <div class="col-12">
+                <div class="p-3 SERVICOS bg-white text-start">Consultoria financeira&nbsp;&nbsp;&nbsp;&nbsp;12\09\2022</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer rodape">
+          <button type="sub" class="btn guardaradser" style="height:50px;" id="btn">Adicionar Serviço</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!--Modal para editar clientes-->
+  <div  class="modal modal-lg modal-md fade" id="modalEditCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Clientes</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="uploadImg ">
+            <i class="mdi mdi-user"></i>
+            <span class="mdi mdi-account"></span>
+            <input type="file" id="file" name="" class="disable">
+            <label for="file" class="mdi mdi-camera-plus mdi-24px  adifoto">&nbsp;&nbsp;&nbsp;&nbsp;Adicionar foto</label>
+          </div>
+          <div class="uploadedit float-end">
+            <label for="" class="mdi mdi-pencil mdi-24px "></label>
+          </div>
+
+          <!-- INFORMAÇÕES PESSOAIS -->
+          <div class="dados mb-4 mt-5">
+            <h6 class="mb-4 mt-2 fw-bold">PERFIL</h6>
+            <div class="container mb-4">
+              <div class="row">
+                <div class="col-12 col-sm-7 " style="margin-right:37px;" >
+                  <label for="nome" class="mb-2">Nome da Empresa</label>
+                  <input type="text" name="" id="nome" class="disable form-control">
+                </div>
+                <div class=" col-12 col-sm-4">
+                  <label for="NIF" class="mb-2">NIF</label>
+                  <input type="text" name="" id="nome" class="disable form-control">
+                </div>
+                <div class="row mt-4">
+                  <div class="col-12">
+                    <label for="Descrição" class="mb-2">Descrição da Empresa</label>
+                    <textarea class="w-100 disable"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- CONTACTOS --> 
+          <div class="dados mb-4 mt-2">
+            <h6 class="mb-4 mt-2 fw-bold">CONTACTOS</h6>
+            <div class="row mb-3">
+              <div class=" col-6 col-sm-3">
+                <label for="tel" class="mb-2">Tel</label>
+                <input type="tel" name="" id="tel" class="disable form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="tel2" class="mb-2">Tel alternativo</label>
+                <input type="tel" name="" id="tel2" class="disable form-control">
+              </div>
+              <div class="col-6 col-sm-3" >
+                <label for="whats" class="mb-2">Whatsapp</label>
+                <input type="tel" name="" id="whats" class="disable form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="email" class="mb-2">E-mail</label>
+                <input type="email" name="" id="email" class="disable form-control">
+              </div>
+            </div>  
+          </div>
+          <!-- ENDEREÇO --> 
+          <div class="dados mb-4 mt-2">
+            <h6 class="mb-4 mt-2 fw-bold">ENDEREÇO</h6>
+            <div class="row mb-3">
+              <div class="col-6 col-sm-3">
+                <label for="pais" class="mb-2">País</label>
+                <input type="text" name="" id="pais" class="disable form-control" placeholder="Angola">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="provin"  class="mb-2">Província</label>
+                <input type="text" name="" id="provin" class="disable form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="bairro"  class="mb-2">Bairro</label>
+                <input type="text" name="" id="bairro" class="disable form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="rua"  class="mb-2">Rua</label>
+                <input type="text" name="" id="rua" class="disable form-control">
+              </div>
+              <div class="col-6 col-sm-3">
+                <label for="nCasa"  class="mb-2">Nº da casa</label>
+                <input type="number" name="" id="nCasa" class="disable form-control">
+              </div>  
+            </div>
+          </div>
+          <!-- INFORMAÇÃO ADICIONAL --> 
+          <div class="dados mb-4 mt-2">
+            <h6 class="mb-4 mt-2 fw-bold">INFORMAÇÃO ADICIONAL</h6>
+            <div class="row">
+              <div class="col-12">
+                <label for="OBS" class="mb-2">OBS</label>
+                <textarea class="w-100 disable" style="height: 155px;"></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- Serviços solicitados --> 
+          <div class="dados mb-4 mt-2  SOLICITADOS" style="height: 260px;">
+            <h6 class="mb-4 mt-2 fw-bold">SERVIÇOS SOLICITADOS</h6>
+            <div class="row">
+              <div class="col-12">
+                <div class="p-3 SERVICOS bg-white text-start">Consultoria financeira&nbsp;&nbsp;&nbsp;&nbsp;12\09\2022</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer rodape">
+          <button type="submit" class="btn guardaradser" style="height:50px;" id="btn">Guardar e Adicionar Serviço</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Habilitar e desabilitar os campos 
+       input para editar os clientes -->
+
+  <script type="text/javascript">
+    let desabilita = document.querySelector('input.disable')
+    let editar = document.querySelector('.uploadedit')
+
+
+    editar.addEventListener('click', () => {
+      //desabilita.disabled = true
+      console.log('Clicou')
+    })
+  </script>
+
+  <!--Modal para eliminar clientes-->
   <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content text-center">

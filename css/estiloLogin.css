@@ -1,0 +1,210 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: 'Poppins', sans-serif;
+}	
+
+html, body, div#telaLogin {
+	height: 100%;
+	/*border: 1px solid darkred;*/
+}
+
+/* Formatação da página de login */
+
+header#cabecalho {
+/*	position: static;*/
+	background: #503721;
+	width: 100%;
+}
+
+header#cabecalho img {
+	max-width: 200px;
+}
+
+div#bg-white h4 {
+	color:  #503721;
+}
+
+div#bg-white h2 {
+	margin-top: 20px;
+}
+
+div.bg-brown {
+	background: #503721;
+	margin-bottom: 0px;
+}
+
+div.bg-brown img {
+	width: 170px;
+	margin-bottom: 100px;
+}
+
+div.bg-brown h3 {
+	color: #a27c49;
+}
+
+div.bg-brown p {
+	font-size: 14px;
+}
+
+form#formulario {
+	margin-left: auto;
+	margin-right: auto;
+	/*border: 1px solid yellowgreen;*/
+	width: 250px;
+	align-items: center;
+}
+
+form#formulario input{
+	border: 2px solid #a27c49; 
+	width: 250px;
+	/*margin: 0 auto;*/
+}
+@media (max-width: 300px){
+	form#formulario {
+	margin-left: auto;
+	margin-right: auto;
+	/*border: 1px solid yellowgreen;*/
+	width: 190px;
+	align-items: center;
+}
+	form#formulario input {
+		width: 190px;
+		transition: 0.05s;
+	}
+}
+
+@media (max-width: 230px){
+	form#formulario {
+	margin-left: auto;
+	margin-right: auto;
+	/*border: 1px solid yellowgreen;*/
+	width: 150px;
+	align-items: center;
+}
+	form#formulario input {
+		width: 150px;
+		transition: 0.05s;
+	}
+}
+
+.lnr-eye-on, .lnr-eye-off {
+    position: absolute;
+    top: 46px;
+    right: 10px;
+    cursor: pointer;
+}
+
+form#formulario input:focus {
+	box-shadow: none;
+}
+form#formulario label{
+	color: #a27c49;
+	font-size: 14px;
+}
+
+form#formulario ul {
+	color: #a27c49;
+	font-size: 11px;
+}
+
+form#formulario button {
+	font-size: 14px;
+	background: #503721;
+}
+
+/*  Utilização de Media Queries */
+@media (min-width: 577px){
+	header, div.xs {
+		display: none;
+	}
+}
+
+@media (max-width: 576px){
+	div.sm, aside#menuLateral {
+		display: none;
+	}
+	body {
+		overflow-x: hidden;
+	}
+}
+
+@media (min-width: 577px){
+	div#conteudo {
+		height: 100%;
+	}
+	/*body {
+		overflow-y: hidden;
+	}*/
+}
+
+/* Formatação da página do administrador */
+
+img.imgPequeno {
+	max-width:150px
+}
+
+img.imgLogo {
+	max-width:150px
+}
+
+img.collaps {
+	max-width: 70px;
+}
+
+div#navCollapse {
+	text-align: left;
+}
+
+div#navCollapse span.nomeFormando {
+	margin-left: 30px;
+}
+
+aside#menuLateral {
+	background: #503721;
+}
+
+@media (max-width: 775px) {
+	aside#menuLateral li {
+		font-size: 11px;
+	}
+	img.imgLogo {
+		width: 130px;
+		transition: 1s;
+	}
+}
+
+@media (max-width: 576px) {
+	div.section {
+		margin-top: 52px;
+	}
+}
+
+@media (max-width: 230px){
+	img.imgPequeno {
+		width: 96px;
+		margin-top: 7px;
+		transition-duration: all 30s;
+	}
+	ul.list-inline, span.nomeFormando {
+		font-size: 14px;
+	}
+}
+
+
+@media (max-width: 190px){
+	ul.list-inline, span.nomeFormando {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 260px){
+	div#navCollapse span.nomeFormando {
+		margin-left: 10px;
+	}
+
+	img.collaps {
+		width: 50px;
+	}
+}

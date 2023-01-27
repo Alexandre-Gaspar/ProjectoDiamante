@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/stylePag.css">
+  <link rel="stylesheet" type="text/css" href="css/add.css">
+
 	<!--Link do bootstrap-->
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<!--Link dos icons-->
@@ -37,17 +39,22 @@
     <!--  **Tabela dos cargos e suas descrições**  -->
     <div class="row mt-4">
       <div class="table-responsive">
-        <table class="table table-responsive">
+        <table class="table">
+          <tr><td></td><td></td><td></td></tr>
           <tr>
             <td class="textCargo">Administrador</td>
             <td class="textQuant">2</td>
-            <td class="icons text-end"><i class="mdi mdi-pencil iEdit"></i><i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminarItemModal"></i>
+            <td class="icons text-end">
+              <i class="mdi mdi-pencil iEdit" data-bs-toggle="modal" data-bs-target="#cargoModal" data-bs-whatever="@fat"></i>
+              <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminarItemModal"></i>
             </td>
           </tr>
           <tr>
             <td class="textCargo">Formador</td>
             <td class="textQuant">5</td>
-            <td class="icons text-end"><i class="mdi mdi-pencil iEdit"></i><i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminarItemModal"></i>
+            <td class="icons text-end">
+              <i class="mdi mdi-pencil iEdit" data-bs-toggle="modal" data-bs-target="#cargoModal" data-bs-whatever="@fat"></i>
+              <i class="mdi mdi-delete iRemov" data-bs-toggle="modal" data-bs-target="#eliminarItemModal"></i>
             </td>
           </tr>
         </table>
@@ -71,28 +78,28 @@
             </div>
             <h6 class="mt-4 mb-4 nomeModal">Permissões</h6>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+              <input type="checkbox" class="form-check-input nomeModal" id="cargo2">
+              <label class="form-check-label" for="cargo2">Cadastrar funcionários</label>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+              <input type="checkbox" class="form-check-input nomeModal" id="cargo3">
+              <label class="form-check-label" for="cargo3">Cadastrar funcionários</label>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+              <input type="checkbox" class="form-check-input nomeModal" id="cargo4">
+              <label class="form-check-label" for="cargo4">Cadastrar funcionários</label>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+              <input type="checkbox" class="form-check-input nomeModal" id="cargo5">
+              <label class="form-check-label" for="cargo5">Cadastrar funcionários</label>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+              <input type="checkbox" class="form-check-input nomeModal" id="cargo6">
+              <label class="form-check-label" for="cargo6">Cadastrar funcionários</label>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input nomeModal" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Cadastrar funcionários</label>
+              <input type="checkbox" class="form-check-input nomeModal" id="cargo7">
+              <label class="form-check-label" for="cargo7">Cadastrar funcionários</label>
             </div>
           </div>
           <div class="modal-footer">
@@ -127,14 +134,3 @@
   <script src="bootstrap/js/jquery.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

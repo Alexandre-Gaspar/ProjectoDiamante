@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+:root {
+  --lightBrown: #a27c4b;
+  --darkBrwon: #503721;
+  --white: #fff;
+  --gray: #d8d8d8;
+  --formColor: #f1ebe4;
+}
+
+#textoCabecalho {
+  margin-left: 58px
+}
+
+.btn-close:focus {
+  box-shadow: none!important;
+}
+
+/*formatação do modal cadastrar cliente*/
+
+.nomeModal, #textoCabecalho {
+  color: var(--darkBrwon);
+}
+
+#nomeModal {
+  border-color: var(--lightBrown);
+}
+
+input.form-control:focus {
+  box-shadow: none;
+  border-color: var(--lightBrown);
+}
+
+.form-check-input {
+  border: 2px solid var(--lightBrown)!important;
+}
+
+.form-check-input:focus {
+  box-shadow: none!important;
+}
+
+.form-check-input:checked {
+  background-color: var(--darkBrwon)!important;
+  border-color: var(--darkBrwon)!important ;
+}
+
+.form-check-input:focus-within {
+  border-color: var(--darkBrwon)!important;
+}
+
+.form-check label {
+  font-size: 14px
+}
+
+.btnModal-submit{
+  background-color: var(--darkBrwon)!important;
+}
+
+.btnModal-submit:hover {
+  background-color: var(--darkBrwon)
+}
+
+.btnModal-submit:active {
+  background-color: var(--lightBrown);
+}
+.nomeModal, #textoCabecalho {
+    color: var(--darkBrwon);
+}
+.btn.btnModal-submit{
+    background-color: var(--darkBrwon);
+}
+.btn.btnModal-submit:hover{
+  background-color: var(--lightBrown)!important;
+}
+
+/* Estilização da página de cargo */
+.icones span{
+  font-size: 20px;
+  color:var(--lightBrown);
+  font-size: 20px;
+  color: white;
+  width: 50px;
+  height: 50px;
+  background: var(--lightBrown);
+  border-radius: 37px;
+}
+
+input[type="checkbox"] {
+  width: 21px;
+  height: 21px;
+  margin-right: 10px;
+  margin-top: 0;
+  vertical-align: bottom;
+}
+
+.form-check-input:checked {
+    background-color: var(--darkBrwon)!important;
+    border-color: var(--darkBrwon)!important;
+}
+
+
+/* Formatação do formulário do cliente */
+
+@media (max-width:576px){
+  .uploadImg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.modal {
+  color: var(--lightBrown);
+}
+
+.modal h6 {
+  color: var(--darkBrwon);
+}
+
+h6.mb-4 {
+    margin-bottom: 2.5rem!important;
+}
+
+h1 {
+   color: var(--darkBrwon);
+}
+
+.uploadImg {
+  width: 135px;
+  height: 135px;
+  background-color: var(--gray);
+  border-radius: 125px;
+  position: relative;
+}
+
+.uploadImg i {
+  padding-left: 17px;
+}
+
+.uploadImg input {
+  display: none;
+}
+
+.uploadImg span {
+  position: absolute;
+  top: 0;
+  font-size: 100px;
+}
+
+.uploadImg label {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: bolder;
+  background-color: var(--lightBrown);
+  width: 160px!important;
+  height: 45px;
+  position: absolute;
+  top: 40px;
+  left: 96px;
+  border-radius: 23px;
+  line-height: 28px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.uploadedit label {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: bolder;
+  background-color: var(--lightBrown);
+  position: absolute;
+  top: 16px;
+  border-radius: 33px;
+  line-height: 28px;
+  padding: 16px 21px;
+  /*display: none;*/
+}
+.dados {
+  background-color: var(--formColor);
+  padding: 10px;
+}
+
+.dados input, .dados select {
+  border-color: var(--lightBrown);
+
+}
+
+.uploaded {
+  margin-left: 5px;
+  position: relative;
+  width: 80px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.uploaded span {
+  position: absolute;
+  top: 28px;
+  left: 18px;
+  border-radius: 40px;
+  padding: 10px;
+  color: var(--white);
+  background-color: var(--lightBrown);
+    
+}
+
+.uploaded i {
+  color: var(--white);
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  background-color: var(--lightBrown);
+  border-radius: 10px; 
+}
+
+li.enviar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.enviar label{
+  color: var(--white);
+  background-color: var(--lightBrown);
+  width: 165px;
+  height: 36px;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+li {
+  list-style: none;
+}
+
+.posicaoFlex {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  input {
+    width: 100%;
+  }
+}
+
+.rodape button {
+  background-color: var(--lightBrown);
+  color: var(--white);
+}
+
+.espacoEsquerda {
+  padding-left: 38px;
+}
+
+.cargoAtrr {
+  margin-top:25px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: var(--white);
+  background-color: var(--lightBrown);
+}
+
+textarea {
+  height: 100px;
+  border-radius: 5px;
+  overflow: auto;
+  border-color: var(--lightBrown);
+   
+}
+textarea:focus-visible{
+    outline: var(--lightBrown);
+}
+
+/*formatação do script modal*/
+button.guardar:active{
+  background-color: var(--lightBrown);
+  color: white;
+
+}
+
+button.guardar:hover{
+  background-color: var(--lightBrown);
+  color: white;
+}
+button.guardaradser:active{
+  background-color: var(--lightBrown);
+  color: white;
+
+}
+
+button.guardaradser:hover{
+  background-color: var(--lightBrown);
+  color: white;
+}
+div#modalEditCliente.active .adifoto {
+  display: none;
+  transition: all 0.4s ease;
+}
+div#modalEditCliente.active .guardar {
+  display: block;
+  transition: all 0.4s ease;
+}
+div#modalEditCliente.active .guardaradser{
+  display: none;
+  transition: all 0.4s ease;
+}
+
+
+div#modalEditCliente.active .SOLICITADOS {
+  display: block;
+  transition: all 0.4s ease;
+}
+
+div#modalEditCliente.active .editar {
+  display: block;
+  transition: all 0.4s ease;
+  right: 23px
+}
+
+button.guardar{
+  display: none;
+}
+
+.SOLICITADOS{
+  display: none;
+}
+
+.SERVICOS{
+  height: 56px;
+  border-radius: 5px;
+  border: 1px solid #a27c4b;
+}
+
+.editar{
+  display: none;
+}
+.mdi-pencil.mdi-24px.mdi:before {
+  font-size: 30px;
+}
+/*formatação do script modal fim*/
+
